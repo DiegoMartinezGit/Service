@@ -22,15 +22,15 @@ public class ServiceFunctions implements Functional {
 
     @ServiceFunction(name = "send_message")
     public String generatechat(Map<String, Object> params) {
-        Chat chat = new Chat();
 
+        Chat chat = new Chat();
         chat.setId_usr1(Integer.toUnsignedLong((Integer) params.get("id_usr1")));
         chat.setMsj(String.valueOf(params.get("content")));
         chat.setId_usr2(Integer.toUnsignedLong((Integer) params.get("id_usr2")));
         chat.setTimestamp(new Timestamp(System.currentTimeMillis()));
         ChatDao.save(chat);
 
-        return "chaat_generado";
+        return "solicitud de msj";
     }
 
     @ServiceFunction(name = "get_messages")
